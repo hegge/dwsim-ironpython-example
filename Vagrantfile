@@ -19,7 +19,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   SCRIPT
   config.vm.provision :shell, inline: $download, privileged: false
 
-  config.vm.provision :shell, :inline => "ln -s /lib/x86_64-linux-gnu/libdl.so.2 /lib/x86_64-linux-gnu/libdl.so"
+  config.vm.provision :shell, :inline => "ln -sf /lib/x86_64-linux-gnu/libdl.so.2 /lib/x86_64-linux-gnu/libdl.so"
 
   $run = <<-SCRIPT
   cd /vagrant/src
